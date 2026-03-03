@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For My Madam ❤️</title>
+
+<style>
+body {
+  text-align: center;
+  font-family: Arial;
+  background-color: #ffe6f0;
+  margin-top: 50px;
+}
+
+.small {
+  width: 170px;
+  margin: 10px;
+}
+
+.big {
+  width: 280px;
+  margin: 10px;
+}
+
+#buttons {
+  margin-top: 20px;
+  position: relative;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+#noBtn {
+  position: absolute;
+  left: 60%;
+  top: 0px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="content">
+  <img src="1st.png" class="small">
+  <h2>Hello Madam 😘 Do you love me?</h2>
+</div>
+
+<div id="buttons">
+  <button id="yesBtn" onclick="nextStep()">Yes</button>
+  <button id="noBtn" onmouseover="moveButton()">No</button>
+</div>
+
+<script>
+
+let step = 1;
+
+function moveButton() {
+  let btn = document.getElementById("noBtn");
+  let x = Math.random() * 300;
+  let y = Math.random() * 100;
+  btn.style.left = x + "px";
+  btn.style.top = y + "px";
+}
+
+function resetButton() {
+  let btn = document.getElementById("noBtn");
+  btn.style.left = "60%";
+  btn.style.top = "0px";
+}
+
+function nextStep() {
+
+  resetButton();
+
+  if(step == 1){
+    document.getElementById("content").innerHTML =
+      '<img src="2nd.png" class="small">' +
+      '<h2>You have a surprise 💝 Do you want to open?</h2>';
+    step++;
+  }
+
+  else if(step == 2){
+    document.getElementById("content").innerHTML =
+      '<img src="3rd.jpg" class="small">' +
+      '<img src="bb.jpeg" class="small">' +
+      '<h2>Hehe Sarle yedavaku 😂 Idi ni real surprise</h2>';
+    step++;
+  }
+
+  else if(step == 3){
+    document.getElementById("content").innerHTML =
+      '<img src="finale.jpeg" class="big">' +
+      '<h2>💖💖</h2>';
+
+    document.getElementById("buttons").style.display = "none";
+  }
+
+}
+
+</script>
+
+</body>
+</html>
